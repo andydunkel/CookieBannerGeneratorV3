@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 40 40"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="edit.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="29.525"
+     inkscape:cx="19.983065"
+     inkscape:cy="20"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <!-- Circle Background -->
+  <circle
+     cx="20.101608"
+     cy="20.067739"
+     r="15"
+     fill="#ffffff"
+     stroke="#1565c0"
+     stroke-width="3"
+     id="circle1" />
+  <!-- Pencil -->
+  <rect
+     x="-5.7546301"
+     y="26.008631"
+     width="14"
+     height="4"
+     fill="#424242"
+     stroke="#1565c0"
+     stroke-width="1.5"
+     id="rect1"
+     transform="rotate(-45)" />
+  <rect
+     x="5.3172183"
+     y="25.984682"
+     width="3"
+     height="4"
+     fill="#e57373"
+     stroke="#1565c0"
+     stroke-width="1.5"
+     id="rect2"
+     transform="rotate(-45)" />
+  <rect
+     x="3.1187942"
+     y="26.295734"
+     width="0.86856878"
+     height="3.4742751"
+     fill="#90a4ae"
+     stroke="#1565c0"
+     stroke-width="1.30285"
+     id="rect3"
+     transform="matrix(0.72253262,-0.69133683,0.72253262,0.69133683,0,0)" />
+  <path
+     d="m 13.944552,22.56836 v 3.085992 h 1.970842 L 13.944552,22.56836"
+     fill="#fdb813"
+     stroke="#1565c0"
+     stroke-width="1.30789"
+     id="path3" />
+</svg>

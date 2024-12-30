@@ -1,0 +1,3 @@
+cookie_table: [
+    {#entries#}
+]

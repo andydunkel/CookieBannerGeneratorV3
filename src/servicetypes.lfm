@@ -1,0 +1,77 @@
+object FormServiceTypes: TFormServiceTypes
+  Left = 536
+  Height = 295
+  Top = 232
+  Width = 389
+  Caption = 'Edit service types'
+  ClientHeight = 295
+  ClientWidth = 389
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.6.0'
+  object ButtonCancel: TButton
+    Left = 256
+    Height = 25
+    Top = 249
+    Width = 123
+    Anchors = [akRight, akBottom]
+    Caption = '&Cancel'
+    ModalResult = 2
+    OnClick = ButtonCancelClick
+    TabOrder = 3
+  end
+  object ButtonOk: TButton
+    Left = 152
+    Height = 25
+    Top = 248
+    Width = 99
+    Anchors = [akRight, akBottom]
+    Caption = '&OK'
+    ModalResult = 1
+    OnClick = ButtonOkClick
+    TabOrder = 2
+  end
+  object ToolBarMain: TToolBar
+    Left = 0
+    Height = 40
+    Top = 0
+    Width = 389
+    ButtonHeight = 32
+    ButtonWidth = 32
+    Images = FormMain.ImageList
+    ShowCaptions = True
+    TabOrder = 0
+    object ToolButtonAdd: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'Add'
+      ImageIndex = 6
+      OnClick = ToolButtonAddClick
+    end
+    object ToolButtonEdit: TToolButton
+      Left = 33
+      Top = 2
+      Caption = 'Edit'
+      ImageIndex = 7
+      OnClick = ToolButtonEditClick
+    end
+    object ToolButtonDelete: TToolButton
+      Left = 65
+      Top = 2
+      Caption = 'Delete'
+      ImageIndex = 8
+      OnClick = ToolButtonDeleteClick
+    end
+  end
+  object ListBox: TListBox
+    Left = 8
+    Height = 200
+    Top = 40
+    Width = 371
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ItemHeight = 0
+    OnDblClick = ListBoxDblClick
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,69 @@
+object FormInputDialog: TFormInputDialog
+  Left = 400
+  Height = 137
+  Top = 257
+  Width = 550
+  Caption = 'Input'
+  ClientHeight = 137
+  ClientWidth = 550
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.6.0'
+  object ButtonOk: TButton
+    Left = 304
+    Height = 25
+    Top = 97
+    Width = 99
+    Anchors = [akRight, akBottom]
+    Caption = '&OK'
+    OnClick = ButtonOkClick
+    TabOrder = 1
+  end
+  object ButtonCancel: TButton
+    Left = 408
+    Height = 25
+    Top = 97
+    Width = 123
+    Anchors = [akRight, akBottom]
+    Caption = '&Cancel'
+    ModalResult = 2
+    TabOrder = 2
+  end
+  object LabelCaption: TLabel
+    Left = 32
+    Height = 15
+    Top = 24
+    Width = 61
+    Caption = 'Enter value:'
+    ParentColor = False
+  end
+  object EditInput: TEdit
+    Left = 32
+    Height = 23
+    Top = 48
+    Width = 499
+    Anchors = [akTop, akLeft, akRight]
+    OnKeyPress = EditInputKeyPress
+    TabOrder = 0
+  end
+  object LabelError: TLabel
+    Left = 32
+    Height = 15
+    Top = 80
+    Width = 103
+    Caption = 'Please enter a value'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object TimerMessage: TTimer
+    Enabled = False
+    Interval = 2500
+    OnTimer = TimerMessageTimer
+    Left = 167
+    Top = 22
+  end
+end

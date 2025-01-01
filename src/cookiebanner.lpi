@@ -30,7 +30,7 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="common;model;export"/>
+            <OtherUnitFiles Value="common;model"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
@@ -71,7 +71,7 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="common;model;export"/>
+            <OtherUnitFiles Value="common;model"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
@@ -147,37 +147,9 @@
         <UnitName Value="ProjectLogic"/>
       </Unit>
       <Unit>
-        <Filename Value="managelang.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormManageLang"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit>
-      <Unit>
-        <Filename Value="servicetypes.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormServiceTypes"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit>
-      <Unit>
         <Filename Value="inputdialog.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormInputDialog"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit>
-      <Unit>
-        <Filename Value="editblock.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormEditBlock"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit>
-      <Unit>
-        <Filename Value="tableentry.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormTableEntry"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
@@ -194,21 +166,6 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FileSystemUtils"/>
       </Unit>
-      <Unit>
-        <Filename Value="export\cookiebannergeneratorlogicexport.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="CookieBannerGeneratorLogicExport"/>
-      </Unit>
-      <Unit>
-        <Filename Value="export\preview.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="Preview"/>
-      </Unit>
-      <Unit>
-        <Filename Value="export\exporter.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="Exporter"/>
-      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -219,7 +176,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="common;model;export"/>
+      <OtherUnitFiles Value="common;model"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

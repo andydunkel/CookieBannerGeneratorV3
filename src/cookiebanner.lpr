@@ -11,8 +11,8 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, mainform, about, XMLHelper, globalfunctions, datamodel, projectlogic,
-  managelang, servicetypes, inputdialog, editblock, tableentry, modelhelper,
-  appsettings, Preview, Exporter;
+  inputdialog, modelhelper,
+  appsettings;
 
 {$R *.res}
 

@@ -3,6 +3,7 @@ object FormEditLanguage: TFormEditLanguage
   Height = 146
   Top = 40
   Width = 243
+  BorderStyle = bsSingle
   Caption = 'Edit language'
   ClientHeight = 146
   ClientWidth = 243

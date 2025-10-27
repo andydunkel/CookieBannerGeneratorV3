@@ -12,14 +12,64 @@ object FormEditLangTexts: TFormEditLangTexts
     Height = 464
     Top = 8
     Width = 904
-    ActivePage = TabSheetConsent
-    TabIndex = 0
+    ActivePage = TabSheetPreferences
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabIndex = 1
     TabOrder = 0
     object TabSheetConsent: TTabSheet
       Caption = 'Consent texts'
     end
     object TabSheetPreferences: TTabSheet
-      Caption = 'Preference texts'
+      Caption = 'Block texts'
+      ClientHeight = 436
+      ClientWidth = 896
+      object ToolBarCat: TToolBar
+        Left = 0
+        Height = 40
+        Top = 0
+        Width = 896
+        ButtonHeight = 32
+        ButtonWidth = 23
+        Caption = 'ToolBarCat'
+        Images = FormMain.ImageList
+        ShowCaptions = True
+        TabOrder = 0
+        object ButtonCatNew: TToolButton
+          Left = 1
+          Top = 2
+          Caption = 'New'
+          ImageIndex = 0
+        end
+        object ButtonCatEdit: TToolButton
+          Left = 33
+          Top = 2
+          Caption = 'Edit'
+          ImageIndex = 7
+        end
+        object ButtonCatDelete: TToolButton
+          Left = 61
+          Top = 2
+          Caption = 'Delete'
+          ImageIndex = 8
+        end
+        object ToolButton6: TToolButton
+          Left = 102
+          Height = 32
+          Top = 2
+          Caption = 'ToolButton6'
+          Style = tbsSeparator
+        end
+        object ButtonCatUp: TToolButton
+          Left = 110
+          Top = 2
+          ImageIndex = 10
+        end
+        object ButtonCatDown: TToolButton
+          Left = 133
+          Top = 2
+          ImageIndex = 9
+        end
+      end
     end
   end
 end

@@ -5574,13 +5574,11 @@ object FormAbout: TFormAbout
     FF0000A0FF00007FFF0000E9FF0000F0FF
   }
   Position = poOwnerFormCenter
-  LCLVersion = '2.2.2.0'
   object Image1: TImage
     Left = 16
     Height = 264
     Top = 8
     Width = 266
-    OnDblClick = Image1DblClick
     Picture.Data = {
       1754506F727461626C654E6574776F726B47726170686963F3C5010089504E47
       0D0A1A0A0000000D4948445200000100000001000802000000D3103F31000000
@@ -9216,6 +9214,7 @@ object FormAbout: TFormAbout
       575E39E8F0F0523E3C5A94617B7869150EEBF38BF3ED80EDFCFF0727DCEEDB0A
       279A3B0000000049454E44AE426082
     }
+    OnDblClick = Image1DblClick
   end
   object LabelTitle: TLabel
     Left = 288
@@ -9253,22 +9252,22 @@ object FormAbout: TFormAbout
     Top = 240
     Width = 91
     Caption = '&Close'
-    OnClick = ButtonCloseClick
     TabOrder = 0
+    OnClick = ButtonCloseClick
   end
   object LabelAuthor: TLabel
     Left = 288
     Height = 15
     Top = 64
-    Width = 151
-    Caption = 'Copyright 2024 Andy Dunkel'
+    Width = 264
+    Caption = 'Copyright 2025 Andy Dunkel and DA-Software.net'
     ParentColor = False
   end
   object LabelFreeware: TLabel
     Left = 288
     Height = 15
     Top = 88
-    Width = 131
+    Width = 132
     Caption = 'This software is freeware.'
     ParentColor = False
   end

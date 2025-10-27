@@ -1,0 +1,25 @@
+object FormEditLangTexts: TFormEditLangTexts
+  Left = 519
+  Height = 483
+  Top = 40
+  Width = 919
+  Caption = 'Edit language texts'
+  ClientHeight = 483
+  ClientWidth = 919
+  Position = poOwnerFormCenter
+  object PageControl1: TPageControl
+    Left = 8
+    Height = 464
+    Top = 8
+    Width = 904
+    ActivePage = TabSheetConsent
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheetConsent: TTabSheet
+      Caption = 'Consent texts'
+    end
+    object TabSheetPreferences: TTabSheet
+      Caption = 'Preference texts'
+    end
+  end
+end

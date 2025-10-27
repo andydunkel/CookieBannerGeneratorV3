@@ -103,6 +103,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="SynEditDsgn"/>
+      </Item>
+      <Item>
         <PackageName Value="SynEdit"/>
       </Item>
       <Item>
@@ -165,6 +168,24 @@
         <Filename Value="model\filesystemutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FileSystemUtils"/>
+      </Unit>
+      <Unit>
+        <Filename Value="formcategory.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormEditCategory"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="formedittexts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormEditLangTexts"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="formeditlang.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormEditLanguage"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>
   </ProjectOptions>

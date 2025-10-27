@@ -12,7 +12,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, mainform, about, XMLHelper, globalfunctions, datamodel, projectlogic,
   inputdialog, modelhelper,
-  appsettings;
+  appsettings, formcategory, formedittexts, formeditlang;
 
 {$R *.res}
 
@@ -23,6 +23,8 @@ begin
   Application.Initialize;
   Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TFormAbout, FormAbout);
+  Application.CreateForm(TFormEditLangTexts, FormEditLangTexts);
+  Application.CreateForm(TFormEditLanguage, FormEditLanguage);
   Application.Run;
 end.
 

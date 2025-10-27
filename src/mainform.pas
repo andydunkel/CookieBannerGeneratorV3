@@ -5,8 +5,8 @@ unit mainform;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ComCtrls,
-  ActnList, StdCtrls, Buttons, SynEdit;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ComCtrls, formcategory,
+  ActnList, StdCtrls, Buttons, ExtCtrls, SynEdit, SynHighlighterJScript;
 
 type
 
@@ -22,7 +22,32 @@ type
     ActionSave: TAction;
     ActionNew: TAction;
     ActionList: TActionList;
+    ButtonLangDelete: TToolButton;
+    ButtonLangDown: TToolButton;
+    ButtonLangEdit: TToolButton;
+    ButtonLangNew: TToolButton;
+    ButtonLangUp: TToolButton;
+    CheckBoxDisableTransitions: TCheckBox;
+    CheckBoxDisablePageInteraction: TCheckBox;
+    CheckBoxDarkMode: TCheckBox;
+    CheckBoxPrefFlipButtons: TCheckBox;
+    CheckBoxConsentEqualWeightButtons: TCheckBox;
+    CheckBoxConsentFlipButtons: TCheckBox;
+    CheckBoxPrefEqualWeightButtons: TCheckBox;
+    ComboPrefPosition: TComboBox;
+    ComboPrefLayout: TComboBox;
+    ComboConsentPosition: TComboBox;
+    ComboConsentLayout: TComboBox;
+    GroupBoxDesignMisc: TGroupBox;
+    GroupBoxDesignConsentModal: TGroupBox;
+    GroupBoxPrefModal: TGroupBox;
     ImageList: TImageList;
+    LabelPrefPosition: TLabel;
+    LabelLayout: TLabel;
+    LabelConsentPosition: TLabel;
+    LabelConsentLayout: TLabel;
+    ListView1: TListView;
+    ListView2: TListView;
     MainMenu: TMainMenu;
     MainToolbar: TToolBar;
     MenuFile: TMenuItem;
@@ -43,9 +68,25 @@ type
     MenuItemOpen: TMenuItem;
     Separator1: TMenuItem;
     StatusBar: TStatusBar;
-    TabSheetCommon: TTabSheet;
+    EditCode: TSynEdit;
+    SynJScriptSyn1: TSynJScriptSyn;
+    TabSheetDesign: TTabSheet;
+    TabSheetTexts: TTabSheet;
+    TabSheetCode: TTabSheet;
+    TabSheetCategories: TTabSheet;
+    ToolBarCat: TToolBar;
+    ToolBarLangs: TToolBar;
     ToolButton1: TToolButton;
     ToolButton2: TToolButton;
+    ButtonCatNew: TToolButton;
+    ButtonCatEdit: TToolButton;
+    ButtonCatDelete: TToolButton;
+    ButtonEditTexts: TToolButton;
+    ToolButton3: TToolButton;
+    ToolButton6: TToolButton;
+    ButtonCatUp: TToolButton;
+    ButtonCatDown: TToolButton;
+    ToolButton7: TToolButton;
     ToolButtonPreview: TToolButton;
     ToolButtonAbout: TToolButton;
     ToolButtonOpen: TToolButton;
@@ -61,6 +102,8 @@ type
     procedure ActionSaveAsExecute(Sender: TObject);
     function ActionSaveExecute(Sender: TObject): boolean;
     procedure ActionServiceTypesExecute(Sender: TObject);
+    procedure ButtonCatNewClick(Sender: TObject);
+    procedure ComboConsentLayoutChange(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     function SaveCheck(): boolean;
     procedure FormShow(Sender: TObject);
@@ -167,6 +210,70 @@ end;
 
 procedure TFormMain.ActionServiceTypesExecute(Sender: TObject);
 begin
+end;
+
+procedure TFormMain.ButtonCatNewClick(Sender: TObject);
+var
+  FormEditCat : TFormEditCategory;
+begin
+  FormEditCat:= TFormEditCategory.Create(Self);
+  FormEditCat.ShowModal;
+end;
+
+procedure TFormMain.ComboConsentLayoutChange(Sender: TObject);
+var
+  SelectedLayout: String;
+  IsBarLayout: Boolean;
+  NeedsUpdate: Boolean;
+begin
+  SelectedLayout := ComboConsentLayout.Text;
+  IsBarLayout := Pos('bar', SelectedLayout) > 0;
+
+  // Check if we need to update the position combo
+  NeedsUpdate := False;
+
+  if IsBarLayout then
+  begin
+    // Bar layout should have 2 items (top, bottom)
+    if ComboConsentPosition.Items.Count <> 2 then
+      NeedsUpdate := True;
+  end
+  else
+  begin
+    // Box/cloud layouts should have 9 items
+    if ComboConsentPosition.Items.Count <> 9 then
+      NeedsUpdate := True;
+  end;
+
+  // Only update if necessary
+  if NeedsUpdate then
+  begin
+    ComboConsentPosition.Items.Clear;
+
+    if IsBarLayout then
+    begin
+      // Bar layouts only have top and bottom positions
+      ComboConsentPosition.Items.Add('top');
+      ComboConsentPosition.Items.Add('bottom');
+    end
+    else
+    begin
+      // Box and cloud layouts have all 9 positions
+      ComboConsentPosition.Items.Add('top left');
+      ComboConsentPosition.Items.Add('top center');
+      ComboConsentPosition.Items.Add('top right');
+      ComboConsentPosition.Items.Add('middle left');
+      ComboConsentPosition.Items.Add('middle center');
+      ComboConsentPosition.Items.Add('middle right');
+      ComboConsentPosition.Items.Add('bottom left');
+      ComboConsentPosition.Items.Add('bottom center');
+      ComboConsentPosition.Items.Add('bottom right');
+    end;
+
+    // Set default selection to first item
+    if ComboConsentPosition.Items.Count > 0 then
+      ComboConsentPosition.ItemIndex := 0;
+  end;
 end;
 
 

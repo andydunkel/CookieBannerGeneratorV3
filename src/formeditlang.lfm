@@ -1,0 +1,65 @@
+object FormEditLanguage: TFormEditLanguage
+  Left = 519
+  Height = 146
+  Top = 40
+  Width = 243
+  Caption = 'Edit language'
+  ClientHeight = 146
+  ClientWidth = 243
+  Position = poOwnerFormCenter
+  object ButtonCancel: TButton
+    Left = 64
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 0
+  end
+  object ButtonOK: TButton
+    Left = 144
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object LabelLang: TLabel
+    Left = 24
+    Height = 15
+    Top = 24
+    Width = 142
+    Caption = 'Language (two letter code)'
+  end
+  object ComboBoxLanguage: TComboBox
+    Left = 24
+    Height = 23
+    Top = 48
+    Width = 195
+    ItemHeight = 15
+    Items.Strings = (
+      'en'
+      'de'
+      'fr'
+      'es'
+      'zh'
+      'hi'
+      'ar'
+      'bn'
+      'pt'
+      'ru'
+      'ur'
+      'id'
+      'ja'
+      'sw'
+      'mr'
+      'te'
+      'tr'
+      'ta'
+      'vi'
+      'ko'
+    )
+    TabOrder = 2
+  end
+end

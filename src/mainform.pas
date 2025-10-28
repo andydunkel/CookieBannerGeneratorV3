@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ComCtrls, formcategory,
   ActnList, StdCtrls, Buttons, ExtCtrls, SynEdit, SynHighlighterJScript, category,
-  formeditlang, language;
+  formeditlang, language, formedittexts;
 
 type
 
@@ -102,12 +102,16 @@ type
     procedure ButtonCatDeleteClick(Sender: TObject);
     procedure ButtonCatEditClick(Sender: TObject);
     procedure ButtonCatNewClick(Sender: TObject);
+    procedure ButtonEditTextsClick(Sender: TObject);
+    procedure ButtonLangDeleteClick(Sender: TObject);
     procedure ButtonLangDownClick(Sender: TObject);
     procedure ButtonLangEditClick(Sender: TObject);
     procedure ButtonLangNewClick(Sender: TObject);
     procedure ButtonLangUpClick(Sender: TObject);
     procedure ComboConsentLayoutChange(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure ListViewLangSelectItem(Sender: TObject; Item: TListItem;
+      Selected: Boolean);
     function SaveCheck(): boolean;
     procedure FormShow(Sender: TObject);
     procedure UpdateTitleBar();
@@ -321,6 +325,58 @@ begin
     UpdateCategories();
   end;
   FreeAndNil(FormEditCat);
+end;
+
+procedure TFormMain.ButtonEditTextsClick(Sender: TObject);
+var
+   FormEditTexts : TFormEditLangTexts;
+begin
+  if ListViewLang.ItemIndex = -1 then exit;
+  FormEditTexts:= TFormEditLangTexts.Create(Self);
+  FormEditTexts.ShowModal;
+  FreeAndNil(FormEditTexts);
+end;
+
+procedure TFormMain.ButtonLangDeleteClick(Sender: TObject);
+var
+  SelectedItem: TListItem;
+  SelectedIndex: Integer;
+  Languages: TLanguageList;
+  LangCode: String;
+  UserChoice: Integer;
+begin
+  // Check if an item is selected
+  SelectedItem := ListViewLang.Selected;
+
+  if SelectedItem = nil then
+  begin
+    ShowWarningMessage('Please select a language to delete.');
+    Exit;
+  end;
+
+  SelectedIndex := SelectedItem.Index;
+  Languages := TProjectLogic.GetInstance.Model.Languages;
+  LangCode := Languages[SelectedIndex].Code;
+
+  // Ask for confirmation with a strong warning
+  UserChoice := MessageDlg('Delete Language',
+                          'Are you sure you want to delete the language "' + LangCode + '"?' + LineEnding + LineEnding +
+                          'WARNING: This will permanently delete all sections and texts for this language!',
+                          mtWarning,
+                          [mbYes, mbNo],
+                          0);
+
+  if UserChoice = mrYes then
+  begin
+    // Remove the language from the model
+    Languages.Delete(SelectedIndex);
+
+    // Update the list view
+    UpdateLangList();
+
+    // Update the ButtonEditTexts enabled state since selection changed
+    ButtonEditTexts.Enabled := ListViewLang.Selected <> nil;
+  end;
 end;
 
 
@@ -539,6 +595,12 @@ begin
   end;
 end;
 
+procedure TFormMain.ListViewLangSelectItem(Sender: TObject; Item: TListItem;
+  Selected: Boolean);
+begin
+  ButtonEditTexts.Enabled := ListViewLang.Selected <> nil;
+end;
+
 //check if the file should be saved
 function TFormMain.SaveCheck: boolean;
 var
@@ -578,6 +640,7 @@ begin
   TProjectLogic.GetInstance; //this will create the data model and project logic, load default
   UpdateTitleBar();
   ModelToForm();
+  ButtonEditTexts.Enabled := False; // Initially disabled
 end;
 
 //Update title bar

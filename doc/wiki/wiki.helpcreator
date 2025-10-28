@@ -1,0 +1,177 @@
+<xml>
+  <info>
+    <version>DA-HelpCreator;1</version>
+  </info>
+  <content>
+    <generalsettings>
+      <projecturl>http://</projecturl>
+      <autoexport>False</autoexport>
+      <OptimizeFileNames>True</OptimizeFileNames>
+      <sitemap>False</sitemap>
+      <imagesitemap>False</imagesitemap>
+      <StandardEditorType>Markdown</StandardEditorType>
+      <AutoSave>False</AutoSave>
+      <webpimage>False</webpimage>
+      <AddHtmlSearch>True</AddHtmlSearch>
+    </generalsettings>
+    <design>
+      <TemplateName>1</TemplateName>
+      <Breadcrump>True</Breadcrump>
+      <Menubar>False</Menubar>
+      <placeholders>
+        <placeholder id="title">
+          <name>Titel</name>
+          <description>Titel der Webseite - für Title-Tag und Top-leiste.</description>
+          <content>Ihr Titel</content>
+        </placeholder>
+        <placeholder id="author">
+          <name>Autor Meta-Tag</name>
+          <description>Wird im Meta-Tag "author" der Webseite eingefügt.</description>
+          <content>Autor</content>
+        </placeholder>
+        <placeholder id="description">
+          <name>Beschreibung Meta-Tag</name>
+          <description>Wird im Meta-Tag "description" der Webseite eingefügt.</description>
+          <content>
+          </content>
+        </placeholder>
+        <placeholder id="footer">
+          <name>Fußzeile</name>
+          <description>Fußzeile, wird am Ende der Webseite angezeigt. Nicht in allen Templates vorhanden.</description>
+          <content>
+          </content>
+        </placeholder>
+      </placeholders>
+    </design>
+    <ftpsettings Id="36ff0d5f-3027-4cd6-b858-cf0a9c5d92b5">
+      <profilname>
+      </profilname>
+      <servername>
+      </servername>
+      <username>
+      </username>
+      <password>
+      </password>
+      <hidePasswort>False</hidePasswort>
+      <autoDelete>False</autoDelete>
+      <synchronize>False</synchronize>
+      <openWebsite>False</openWebsite>
+      <ssltlsencryption>False</ssltlsencryption>
+      <sFTP>False</sFTP>
+      <directories>
+      </directories>
+      <numthreads>1</numthreads>
+    </ftpsettings>
+    <metatagsettings>
+      <title>
+      </title>
+      <author>
+      </author>
+      <description>
+      </description>
+      <keywords>
+      </keywords>
+      <robotsnoindex>False</robotsnoindex>
+      <robotsnofollow>False</robotsnofollow>
+      <isdate>False</isdate>
+      <istime>False</istime>
+      <date>01.01.0001 00:00:00</date>
+      <time>01.01.0001 00:00:00</time>
+      <istelephone>False</istelephone>
+      <recognizetelephone>False</recognizetelephone>
+      <isdateexpires>False</isdateexpires>
+      <istimeexpires>False</istimeexpires>
+      <dateexpires>01.01.0001 00:00:00</dateexpires>
+      <timeexpires>01.01.0001 00:00:00</timeexpires>
+      <secondsexpires>-1</secondsexpires>
+      <cachecontrol>0</cachecontrol>
+      <ispragmacachecontrol>False</ispragmacachecontrol>
+    </metatagsettings>
+    <DADocument>
+      <borderleft>25</borderleft>
+      <borderright>20</borderright>
+      <bordertop>20</bordertop>
+      <borderbottom>20</borderbottom>
+      <pagesize>5</pagesize>
+      <pageorientation>0</pageorientation>
+      <DocInfo>
+        <title>
+        </title>
+        <author>
+        </author>
+        <creator>
+        </creator>
+        <subject>
+        </subject>
+        <keywords>
+        </keywords>
+      </DocInfo>
+      <header>
+        <textleft>
+        </textleft>
+        <textmiddle>
+        </textmiddle>
+        <textright>
+        </textright>
+      </header>
+      <footer>
+        <textleft>
+        </textleft>
+        <textmiddle>
+        </textmiddle>
+        <textright>
+        </textright>
+      </footer>
+      <LeftBoderOptions>
+        <text>
+        </text>
+        <printpunchermark>False</printpunchermark>
+        <foldmarks>0</foldmarks>
+      </LeftBoderOptions>
+    </DADocument>
+    <helpExplorerData>
+      <Title>Help Explorer</Title>
+      <ShowToolbar>True</ShowToolbar>
+      <StartMaximized>False</StartMaximized>
+      <WindowCenter>True</WindowCenter>
+      <WindowLeft>200</WindowLeft>
+      <WindowHeight>800</WindowHeight>
+      <WindowTop>300</WindowTop>
+      <WindowWidth>1024</WindowWidth>
+      <ExportDir>
+      </ExportDir>
+      <title>Help Explorer</title>
+    </helpExplorerData>
+    <CHMExport>
+      <Title>Hilfe</Title>
+      <Language>91</Language>
+      <ExportFileName>help.chm</ExportFileName>
+      <ThemeName>
+      </ThemeName>
+      <StartPage>index.html</StartPage>
+      <WindowWidth>1024</WindowWidth>
+      <WindowHeight>800</WindowHeight>
+      <WindowLeft>200</WindowLeft>
+      <WindowTop>300</WindowTop>
+      <AddFullTextSearch>False</AddFullTextSearch>
+      <ButtonHideShow>False</ButtonHideShow>
+      <ButtonBack>True</ButtonBack>
+      <ButtonForward>True</ButtonForward>
+      <ButtonStop>False</ButtonStop>
+      <ButtonRefresh>False</ButtonRefresh>
+      <ButtonHome>True</ButtonHome>
+      <ButtonOptions>False</ButtonOptions>
+      <ButtonPrint>False</ButtonPrint>
+      <AddRoot>True</AddRoot>
+      <ThemeName>
+      </ThemeName>
+    </CHMExport>
+    <treeContent>
+      <DirectoryNode Path="" Expanded="True" Id="babb6d6d-0611-44f3-8c6f-398edb36eeaa">
+        <DirectoryNode Path="Data model" Expanded="False" Id="a485ecf8-9926-4842-93a3-a34003f6394c" />
+      </DirectoryNode>
+    </treeContent>
+    <exportPath>
+    </exportPath>
+  </content>
+</xml>

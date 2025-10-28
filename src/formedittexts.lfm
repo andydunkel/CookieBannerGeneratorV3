@@ -1,15 +1,15 @@
 object FormEditLangTexts: TFormEditLangTexts
   Left = 519
-  Height = 483
+  Height = 524
   Top = 40
   Width = 919
   Caption = 'Edit language texts'
-  ClientHeight = 483
+  ClientHeight = 524
   ClientWidth = 919
   Position = poOwnerFormCenter
   object PageControl1: TPageControl
     Left = 8
-    Height = 464
+    Height = 505
     Top = 8
     Width = 904
     ActivePage = TabSheetConsent
@@ -18,7 +18,7 @@ object FormEditLangTexts: TFormEditLangTexts
     TabOrder = 0
     object TabSheetConsent: TTabSheet
       Caption = 'Texts'
-      ClientHeight = 436
+      ClientHeight = 477
       ClientWidth = 896
       object GroupBoxConsentTexts: TGroupBox
         Left = 8
@@ -248,7 +248,7 @@ object FormEditLangTexts: TFormEditLangTexts
     end
     object TabSheetPreferences: TTabSheet
       Caption = 'Sections'
-      ClientHeight = 436
+      ClientHeight = 477
       ClientWidth = 896
       object ToolBarCat: TToolBar
         Left = 0
@@ -299,7 +299,7 @@ object FormEditLangTexts: TFormEditLangTexts
       end
       object ListViewBlocks: TListView
         Left = 0
-        Height = 396
+        Height = 437
         Top = 40
         Width = 896
         Align = alClient

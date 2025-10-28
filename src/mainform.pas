@@ -662,12 +662,40 @@ end;
 
 procedure TFormMain.ModelToForm();
 begin
-
+  with TProjectLogic.GetInstance.Model do
+  begin
+    ComboConsentLayout.Text := DesignConsentModalLayout;
+    ComboConsentPosition.Text := DesignConsentModalPosition;
+    CheckBoxConsentFlipButtons.Checked := DesignConsentModalFlipButtons;
+    CheckBoxConsentEqualWeightButtons.Checked := DesignConsentModalEqualWeightButtons;
+    CheckBoxPrefEqualWeightButtons.Checked := DesignPrefModalEqualWeightButtons;
+    CheckBoxPrefFlipButtons.Checked := DesignConsentModalFlipButtons;
+    ComboPrefPosition.Text := DesignConsentModalPosition;
+    ComboPrefLayout.Text := DesignConsentModalLayout;
+    CheckBoxDisablePageInteraction.Checked := DesignDisablePageInteraction;
+    CheckBoxDarkMode.Checked := DesignEnableDarkMode;
+    CheckBoxDisableTransitions.Checked := DesignDisableTransitions;
+  end;
 end;
 
 procedure TFormMain.FormToModel();
 begin
+  with TProjectLogic.GetInstance.Model do
+  begin
+    DesignConsentModalLayout:= ComboConsentLayout.Text;
+    DesignConsentModalPosition:=  ComboConsentPosition.Text;
+    DesignConsentModalFlipButtons:= CheckBoxConsentEqualWeightButtons.Checked;
+    DesignConsentModalEqualWeightButtons:= CheckBoxConsentEqualWeightButtons.Checked;
 
+    DesignPrefModalEqualWeightButtons:= CheckBoxPrefEqualWeightButtons.Checked;
+    DesignConsentModalFlipButtons:= CheckBoxPrefFlipButtons.Checked;
+    DesignConsentModalPosition:= ComboPrefPosition.Text;
+    DesignConsentModalLayout:= ComboPrefLayout.Text;
+
+    DesignDisablePageInteraction:= CheckBoxDisablePageInteraction.Checked;
+    DesignEnableDarkMode:= CheckBoxDarkMode.Checked;
+    DesignDisableTransitions:= CheckBoxDisableTransitions.Checked;
+  end;
 end;
 
 procedure TFormMain.ShowErrorMessage(msg: String);

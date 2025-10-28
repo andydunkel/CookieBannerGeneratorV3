@@ -4,246 +4,82 @@
   <ProjectName>Cookie Banner Project</ProjectName>
   <Comment>Comment</Comment>
   <SelectedLanguage>0</SelectedLanguage>
-  <CommonSettings>
-    <CookieName>cookiebanner</CookieName>
-    <Delay>500</Delay>
-    <HideFromBots>False</HideFromBots>
-    <RemoveCookieTables>False</RemoveCookieTables>
-    <Col3Active>True</Col3Active>
-    <Col4Active>True</Col4Active>
-  </CommonSettings>
-  <Design>
-    <ConsentLayout>box</ConsentLayout>
-    <ConsentPos>middle</ConsentPos>
-    <ConsentPos1>center</ConsentPos1>
-    <ConsentTransition>zoom</ConsentTransition>
-    <SettingsLayout>box</SettingsLayout>
-    <SettingsPosition>center</SettingsPosition>
-    <SettingsTransition>zoom</SettingsTransition>
-  </Design>
-  <ServiceTypes>
-    <ServiceType>Essential</ServiceType>
-    <ServiceType>Functional</ServiceType>
-    <ServiceType>Performance</ServiceType>
-    <ServiceType>Targeting</ServiceType>
-    <ServiceType>Advertising</ServiceType>
-  </ServiceTypes>
-  <CookieLanguages>
-    <CookieLanguage>
-      <Language>de</Language>
-      <Settings>
-        <Title>Cookie-Einstellungen</Title>
-        <ButtonSave>Einstellungen speichern</ButtonSave>
-        <ButtonDenyAll>Alle ablehnen</ButtonDenyAll>
-        <ButtonClose>Schließen</ButtonClose>
-        <ButtonAcceptAll>Alle akzeptieren</ButtonAcceptAll>
-        <Col1>Name</Col1>
-        <Col2>Domain</Col2>
-        <Col3>Ablauf</Col3>
-        <Col4>Beschreibung</Col4>
-      </Settings>
-      <Approval>
-        <Title>Privatsphäre-Einstellungen</Title>
-        <Description>Wir und unsere Partner nutzen Cookies und andere Technologien, um Daten auf Ihrem Gerät zu speichern und zu verarbeiten. Ihre Zustimmung ist hierfür notwendig.
-
-&lt;button type="button" data-cc="c-settings" class="cc-link"&gt;Individuelle Privatsphäre-Einstellungen&lt;/button&gt;
-
-Wir verwenden diese Daten zur Personalisierung von Anzeigen und Inhalten, Messung ihrer Performance und Erkenntnisgewinnung über Zielgruppen sowie zur Verbesserung von Systemen und Software. Einige Partner verarbeiten Ihre Daten auf Grundlage berechtigten Interesses, welches Sie jederzeit widerrufen können. Weitere Details und Einstellungsmöglichkeiten finden Sie unter "Einstellungen" am Seitenende. Ihre Auswahl gilt nur für dieses Angebot. Es besteht keine Verpflichtung, der Datenverarbeitung zuzustimmen, und Sie können Ihre Entscheidung jederzeit ändern.</Description>
-        <PrimaryButton>Alle akzeptieren</PrimaryButton>
-        <SecondaryButton>Weiter ohne Einwilligung</SecondaryButton>
-        <SelectButton>Einstellungen bearbeiten</SelectButton>
-      </Approval>
-      <Blocks>
-        <Block>
-          <Title>Verwendung von Cookies 📢</Title>
-          <Description>Wir verwenden Cookies und ähnliche Technologien auf unserer Website und verarbeiten personenbezogene Daten (z.B. Ihre IP-Adresse) über Sie. Wir teilen diese Daten auch mit Dritten. Die Datenverarbeitung kann mit Ihrer Einwilligung oder auf der Grundlage eines berechtigten Interesses erfolgen, dem Sie widersprechen können. Sie haben das Recht, nur in essenzielle Services einzuwilligen und Ihre Einwilligung zu einem späteren Zeitpunkt in der Datenschutzerklärung zu ändern oder zu widerrufen. Nachfolgend finden Sie eine Übersicht über alle Services, die von dieser Website genutzt werden. Sie können detaillierte Informationen zu jedem Service einsehen und diesen einzeln zustimmen oder von Ihrem Widerspruchsrecht Gebrauch machen.
-
-&lt;a href="about:blank" target="_blank" class="cc-link"&gt;Datenschutzerklärung&lt;/a&gt;.</Description>
-          <IsToggle>False</IsToggle>
-          <BlockType>Essential</BlockType>
-          <Enabled>True</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries/>
-        </Block>
-        <Block>
-          <Title>Essenzielle Cookies</Title>
-          <Description>Essenzielle Services sind für die grundlegende Funktionalität der Website erforderlich. Sie enthalten nur technisch notwendige Services. Diesen Services kann nicht widersprochen werden.</Description>
-          <IsToggle>True</IsToggle>
-          <BlockType>Essential</BlockType>
-          <Enabled>True</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries>
-            <CookieTableEntry>
-              <Col1>Youtube</Col1>
-              <Col2>Youtube.com</Col2>
-              <Col3/>
-              <Col4>YouTube bietet die Möglichkeit, auf youtube.com publizierte Inhalte direkt in andere Webseiten einzubetten. Durch Cookies werden die besuchten Seiten sowie detaillierte Statistiken über das Verhalten der Nutzer erfasst. Diese Informationen können mit den Daten von Nutzern, die sich bei youtube.com und google.com angemeldet haben, kombiniert werden.</Col4>
-              <IsRegEx>False</IsRegEx>
-            </CookieTableEntry>
-          </CookieTableEntries>
-        </Block>
-        <Block>
-          <Title>Statistik Cookies</Title>
-          <Description>Statistik-Services werden benötigt, um pseudonymisierte Daten über die Besucher der Website zu sammeln. Die Daten ermöglichen es uns, die Besucher besser zu verstehen und die Website zu optimieren.</Description>
-          <IsToggle>True</IsToggle>
-          <BlockType>Performance</BlockType>
-          <Enabled>False</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries>
-            <CookieTableEntry>
-              <Col1>Google Analytics</Col1>
-              <Col2>Google.com</Col2>
-              <Col3/>
-              <Col4>Google Analytics ist ein Dienst zur Erstellung detaillierter Statistiken über das Nutzerverhalten auf der Website. Die Cookies werden verwendet, um Nutzer zu unterscheiden, die Anfragerate zu drosseln, die Client-ID mit der AMP-Client-ID des Nutzers zu verknüpfen, kampagnenbezogene Informationen von und für den Nutzer zu speichern und um Daten von mehreren Seitenaufrufen zu verknüpfen.
-
-&lt;strong&gt;Datenschutzerklärung:&lt;/strong&gt; &lt;a href="https://policies.google.com/technologies/partner-sites" target="_blank"&gt;https://policies.google.com/technologies/partner-sites&lt;/a&gt;</Col4>
-              <IsRegEx>False</IsRegEx>
-            </CookieTableEntry>
-            <CookieTableEntry>
-              <Col1>Matomo Analytics</Col1>
-              <Col2>piwik.ekiwi.de</Col2>
-              <Col3/>
-              <Col4>Ein Service, um detaillierte Statistiken über das Nutzerverhalten auf der Website zu erstellen. Cookies werden verwendet, um Nutzer zu unterscheiden und um Daten aus mehreren Seitenaufrufen miteinander zu verknüpfen.</Col4>
-              <IsRegEx>False</IsRegEx>
-            </CookieTableEntry>
-          </CookieTableEntries>
-        </Block>
-        <Block>
-          <Title>Werbung</Title>
-          <Description>Anzeigen und Inhalte können basierend auf einem Profil personalisiert werden. Es können mehr Daten hinzugefügt werden, um Anzeigen und Inhalte besser zu personalisieren. Die Performance von Anzeigen und Inhalten kann gemessen werden. Erkenntnisse über Zielgruppen, die die Anzeigen und Inhalte betrachtet haben, können abgeleitet werden.</Description>
-          <IsToggle>True</IsToggle>
-          <BlockType>Advertising</BlockType>
-          <Enabled>False</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries>
-            <CookieTableEntry>
-              <Col1>Google Adsense</Col1>
-              <Col2>Google.com</Col2>
-              <Col3/>
-              <Col4>Google AdSense ermöglicht es Websites Anzeigen aus dem Werbenetzwerk Google Ads auf ihrer Website zu schalten und dafür bezahlt zu werden. Cookies werden verwendet, um Nutzer zu unterscheiden und ihr Verhalten auf der Website im Detail nachzuvollziehen und diese Daten mit Werbedaten aus dem Google Ads Werbenetzwerk zu verknüpfen. Die Daten werden für die gezielte Schaltung von Anzeigen und zur Messung des Werbeerfolgs ausgewertet. Diese Daten können mit Daten über Nutzer verknüpft werden, die sich in ihren Google-Konten auf google.com oder einer lokalisierten Version von Google angemeldet haben.</Col4>
-              <IsRegEx>False</IsRegEx>
-            </CookieTableEntry>
-          </CookieTableEntries>
-        </Block>
-        <Block>
-          <Title>Mehr Informationen</Title>
-          <Description>Falls Sie Fragen haben, können Sie jederzeit Kontakt aufnehmen:
-&lt;a class="cc-link" href=""&gt;Kontaktformular&lt;/a&gt;</Description>
-          <IsToggle>False</IsToggle>
-          <BlockType>Essential</BlockType>
-          <Enabled>False</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries/>
-        </Block>
-      </Blocks>
-    </CookieLanguage>
-    <CookieLanguage>
-      <Language>en</Language>
-      <Settings>
-        <Title>Cookie settings</Title>
-        <ButtonSave>Save settings</ButtonSave>
-        <ButtonDenyAll>Reject all</ButtonDenyAll>
-        <ButtonClose>Close</ButtonClose>
-        <ButtonAcceptAll>Accept all</ButtonAcceptAll>
-        <Col1>Name</Col1>
-        <Col2>Domain</Col2>
-        <Col3>Expiration</Col3>
-        <Col4>Description</Col4>
-      </Settings>
-      <Approval>
-        <Title>Privacy settings</Title>
-        <Description>We and our partners use cookies and other technologies to store and process data on your device. Your consent is required for this.
-
-&lt;button type="button" data-cc="c-settings" class="cc-link"&gt;Individual privacy settings&lt;/button&gt;
-
-We use this data to personalise ads and content, measure performance and learn about audiences, and improve systems and software. Some partners process your data on the basis of legitimate interest, which you can revoke at any time. You can find further details and setting options under "Settings" at the bottom of the page. Your selection only applies to this offer. There is no obligation to agree to data processing and you can change your decision at any time.</Description>
-        <PrimaryButton>Accept all</PrimaryButton>
-        <SecondaryButton>Continue without consent</SecondaryButton>
-        <SelectButton>Edit settings</SelectButton>
-      </Approval>
-      <Blocks>
-        <Block>
-          <Title>Use of cookies  📢</Title>
-          <Description>We use cookies and similar technologies on our website and process personal data (e.g. your IP address) about you. We also share this data with third parties. Data processing may be carried out with your consent or on the basis of legitimate interest, which you have the right to object to. You have the right to consent to essential services only and to change or withdraw your consent at a later date in the privacy policy. Below you will find an overview of all services used by this website. You can view detailed information on each service and consent to them individually or exercise your right to object.
-
-&lt;a href="about:blank" target="_blank" class="cc-link"&gt;Privacy policy&lt;/a&gt;</Description>
-          <IsToggle>False</IsToggle>
-          <BlockType>Essential</BlockType>
-          <Enabled>False</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries/>
-        </Block>
-        <Block>
-          <Title>Essential cookies</Title>
-          <Description>Essential services are required for the basic functionality of the website. They contain only technically necessary services. These services cannot be objected to.</Description>
-          <IsToggle>True</IsToggle>
-          <BlockType>Essential</BlockType>
-          <Enabled>True</Enabled>
-          <ReadOnly>True</ReadOnly>
-          <CookieTableEntries>
-            <CookieTableEntry>
-              <Col1>YouTube</Col1>
-              <Col2>youtube.com</Col2>
-              <Col3/>
-              <Col4>YouTube offers the possibility to embed content published on youtube.com directly into other websites. Cookies are used to record the pages visited and detailed statistics on user behaviour. This information can be combined with the data of users who have registered with youtube.com and google.com.</Col4>
-              <IsRegEx>False</IsRegEx>
-            </CookieTableEntry>
-          </CookieTableEntries>
-        </Block>
-        <Block>
-          <Title>Statistics</Title>
-          <Description>Statistics services are needed to collect pseudonymised data about visitors to the website. The data enables us to better understand the visitors and optimise the website.</Description>
-          <IsToggle>True</IsToggle>
-          <BlockType>Performance</BlockType>
-          <Enabled>False</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries>
-            <CookieTableEntry>
-              <Col1>Google Analytics</Col1>
-              <Col2>Google.com</Col2>
-              <Col3/>
-              <Col4>Google Analytics is a service used to create detailed statistics about user behaviour on the website. The cookies are used to distinguish users, throttle the request rate, link the client ID to the user's AMP client ID, store campaign-related information from and for the user and to link data from multiple page views.
-
-Privacy Policy: &lt;a href="https://policies.google.com/technologies/partner-sites" target="_blank"&gt;https://policies.google.com/technologies/partner-sites&lt;/a&gt;</Col4>
-              <IsRegEx>False</IsRegEx>
-            </CookieTableEntry>
-            <CookieTableEntry>
-              <Col1>Matomo Analytics</Col1>
-              <Col2>piwik.ekiwi.de</Col2>
-              <Col3/>
-              <Col4>A service to create detailed statistics about user behaviour on the website. Cookies are used to distinguish users and to link data from multiple page views.</Col4>
-              <IsRegEx>False</IsRegEx>
-            </CookieTableEntry>
-          </CookieTableEntries>
-        </Block>
-        <Block>
-          <Title>Ads</Title>
-          <Description>Ads and content can be personalised based on a profile. More data can be added to better personalise ads and content. The performance of ads and content can be measured. Insights about audiences who have viewed the ads and content can be derived.</Description>
-          <IsToggle>True</IsToggle>
-          <BlockType>Advertising</BlockType>
-          <Enabled>False</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries>
-            <CookieTableEntry>
-              <Col1>Google Adsense</Col1>
-              <Col2>google.com</Col2>
-              <Col3/>
-              <Col4>Google AdSense allows websites to display ads from the Google Ads advertising network on their website and get paid for it. Cookies are used to distinguish users and to track their behaviour on the website in detail and to link this data with advertising data from the Google Ads advertising network. The data is analysed for the targeted placement of ads and to measure advertising success. This data can be linked to data about users who have logged into their Google accounts on google.com or a localised version of Google.</Col4>
-              <IsRegEx>False</IsRegEx>
-            </CookieTableEntry>
-          </CookieTableEntries>
-        </Block>
-        <Block>
-          <Title>More information</Title>
-          <Description>If you have any questions, you can contact us at any time:
-&lt;a class="cc-link" href=""&gt;contact form&lt;/a&gt;</Description>
-          <IsToggle>False</IsToggle>
-          <BlockType>Essential</BlockType>
-          <Enabled>False</Enabled>
-          <ReadOnly>False</ReadOnly>
-          <CookieTableEntries/>
-        </Block>
-      </Blocks>
-    </CookieLanguage>
-  </CookieLanguages>
+  <DesignConsentModalLayout>box</DesignConsentModalLayout>
+  <DesignConsentModalPosition>top left</DesignConsentModalPosition>
+  <DesignConsentModalFlipButtons>False</DesignConsentModalFlipButtons>
+  <DesignConsentModalEqualWeightButtons>False</DesignConsentModalEqualWeightButtons>
+  <DesignPrefModalLayout>box</DesignPrefModalLayout>
+  <DesignPrefModalPosition>right</DesignPrefModalPosition>
+  <DesignPrefModalFlipButtons>False</DesignPrefModalFlipButtons>
+  <DesignPrefModalEqualWeightButtons>False</DesignPrefModalEqualWeightButtons>
+  <DesignEnableDarkMode>False</DesignEnableDarkMode>
+  <DesignDisablePageInteraction>True</DesignDisablePageInteraction>
+  <DesignDisableTransitions>False</DesignDisableTransitions>
+  <Categories>
+    <Category>
+      <Name>necessary</Name>
+      <ReadOnly>True</ReadOnly>
+      <PreSelected>True</PreSelected>
+    </Category>
+    <Category>
+      <Name>functionality</Name>
+      <ReadOnly>False</ReadOnly>
+      <PreSelected>True</PreSelected>
+    </Category>
+    <Category>
+      <Name>analytics</Name>
+      <ReadOnly>False</ReadOnly>
+      <PreSelected>False</PreSelected>
+    </Category>
+    <Category>
+      <Name>marketing</Name>
+      <ReadOnly>False</ReadOnly>
+      <PreSelected>False</PreSelected>
+    </Category>
+  </Categories>
+  <DefaultLanguage>en</DefaultLanguage>
+  <Languages>
+    <Language>
+      <Code>en</Code>
+      <Translation>
+        <ConsentModal>
+          <Title/>
+          <Description/>
+          <AcceptAllBtn/>
+          <AcceptNecessaryBtn/>
+          <ShowPreferencesBtn/>
+          <Footer/>
+        </ConsentModal>
+        <PreferencesModal>
+          <Title/>
+          <AcceptAllBtn/>
+          <AcceptNecessaryBtn/>
+          <SavePreferencesBtn/>
+          <CloseIconLabel/>
+          <ServiceCounterLabel/>
+        </PreferencesModal>
+      </Translation>
+    </Language>
+    <Language>
+      <Code>de</Code>
+      <Translation>
+        <ConsentModal>
+          <Title/>
+          <Description/>
+          <AcceptAllBtn/>
+          <AcceptNecessaryBtn/>
+          <ShowPreferencesBtn/>
+          <Footer/>
+        </ConsentModal>
+        <PreferencesModal>
+          <Title/>
+          <AcceptAllBtn/>
+          <AcceptNecessaryBtn/>
+          <SavePreferencesBtn/>
+          <CloseIconLabel/>
+          <ServiceCounterLabel/>
+        </PreferencesModal>
+      </Translation>
+    </Language>
+  </Languages>
 </Project>

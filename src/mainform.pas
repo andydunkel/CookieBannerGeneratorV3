@@ -122,6 +122,7 @@ type
     procedure FormToModel();
     procedure UpdateCategories();
     procedure UpdateLangList();
+    procedure UpdateAll();
   public
 
   end;
@@ -173,6 +174,7 @@ begin
   if Self.SaveCheck() = true then
   begin
     TProjectLogic.GetInstance.New();
+    UpdateAll();
   end;
 end;
 
@@ -181,8 +183,9 @@ begin
   if OpenDialog.Execute then
   begin
     TProjectLogic.GetInstance.Open(OpenDialog.FileName);
+    UpdateAll();
+    ModelToForm();
   end;
-  ModelToForm();
 end;
 
 procedure TFormMain.ActionPreviewExecute(Sender: TObject);
@@ -497,6 +500,13 @@ begin
   end;
 end;
 
+procedure TFormMain.UpdateAll();
+begin
+  UpdateCategories();
+  UpdateLangList();
+  UpdateTitleBar();
+end;
+
 procedure TFormMain.UpdateCategories();
 var
   i: Integer;
@@ -638,8 +648,8 @@ end;
 procedure TFormMain.FormShow(Sender: TObject);
 begin
   TProjectLogic.GetInstance; //this will create the data model and project logic, load default
-  UpdateTitleBar();
   ModelToForm();
+  UpdateAll();
   ButtonEditTexts.Enabled := False; // Initially disabled
 end;
 
@@ -665,16 +675,20 @@ begin
   with TProjectLogic.GetInstance.Model do
   begin
     ComboConsentLayout.Text := DesignConsentModalLayout;
-    ComboConsentPosition.Text := DesignConsentModalPosition;
+    ComboPrefLayout.Text := DesignPrefModalLayout;
+
+    ComboConsentLayoutChange(nil);
+
     CheckBoxConsentFlipButtons.Checked := DesignConsentModalFlipButtons;
     CheckBoxConsentEqualWeightButtons.Checked := DesignConsentModalEqualWeightButtons;
     CheckBoxPrefEqualWeightButtons.Checked := DesignPrefModalEqualWeightButtons;
     CheckBoxPrefFlipButtons.Checked := DesignConsentModalFlipButtons;
-    ComboPrefPosition.Text := DesignConsentModalPosition;
-    ComboPrefLayout.Text := DesignConsentModalLayout;
     CheckBoxDisablePageInteraction.Checked := DesignDisablePageInteraction;
     CheckBoxDarkMode.Checked := DesignEnableDarkMode;
     CheckBoxDisableTransitions.Checked := DesignDisableTransitions;
+
+    ComboConsentPosition.Text := DesignConsentModalPosition;
+    ComboPrefPosition.Text := DesignPrefModalPosition;
   end;
 end;
 

@@ -22,24 +22,232 @@ object FormEditLangTexts: TFormEditLangTexts
       ClientWidth = 896
       object GroupBoxConsentTexts: TGroupBox
         Left = 8
-        Height = 208
+        Height = 256
         Top = 8
         Width = 872
         Anchors = [akTop, akLeft, akRight]
         Caption = 'Consent texts'
+        ClientHeight = 236
+        ClientWidth = 868
         TabOrder = 0
+        object LabelConsentTitle: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 26
+          Caption = 'Title:'
+          ParentColor = False
+        end
+        object EditConsentTitle: TEdit
+          Left = 120
+          Height = 23
+          Top = 5
+          Width = 740
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 0
+          Text = 'Hello traveller, it''s cookie time!'
+        end
+        object LabelConsentDesc: TLabel
+          Left = 8
+          Height = 15
+          Top = 36
+          Width = 63
+          Caption = 'Description:'
+          ParentColor = False
+        end
+        object MemoConsentDesc: TMemo
+          Left = 120
+          Height = 71
+          Top = 33
+          Width = 740
+          Anchors = [akTop, akLeft, akRight]
+          Lines.Strings = (
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.'
+          )
+          ScrollBars = ssAutoVertical
+          TabOrder = 1
+        end
+        object LabelConsentAcceptAll: TLabel
+          Left = 8
+          Height = 15
+          Top = 115
+          Width = 55
+          Caption = 'Accept all:'
+          ParentColor = False
+        end
+        object EditConsentAcceptAll: TEdit
+          Left = 120
+          Height = 23
+          Top = 112
+          Width = 200
+          TabOrder = 2
+          Text = 'Accept all'
+        end
+        object LabelConsentRejectAll: TLabel
+          Left = 8
+          Height = 15
+          Top = 143
+          Width = 50
+          Caption = 'Reject all:'
+          ParentColor = False
+        end
+        object EditConsentRejectAll: TEdit
+          Left = 120
+          Height = 23
+          Top = 140
+          Width = 200
+          TabOrder = 3
+          Text = 'Reject all'
+        end
+        object LabelConsentPrefs: TLabel
+          Left = 336
+          Height = 15
+          Top = 115
+          Width = 110
+          Caption = 'Manage preferences:'
+          ParentColor = False
+        end
+        object EditConsentPrefs: TEdit
+          Left = 488
+          Height = 23
+          Top = 115
+          Width = 200
+          TabOrder = 4
+          Text = 'Manage preferences'
+        end
+        object LabelConsentFooter: TLabel
+          Left = 8
+          Height = 15
+          Top = 168
+          Width = 37
+          Caption = 'Footer:'
+          ParentColor = False
+        end
+        object MemoConsentFooter: TMemo
+          Left = 120
+          Height = 55
+          Top = 168
+          Width = 740
+          Anchors = [akTop, akLeft, akRight]
+          Lines.Strings = (
+            '<a href="#link">Privacy Policy</a>'
+            '<a href="#link">Terms and conditions</a>'
+          )
+          ScrollBars = ssAutoVertical
+          TabOrder = 5
+        end
       end
       object GroupBoxPrefModal: TGroupBox
         Left = 8
-        Height = 200
-        Top = 224
+        Height = 144
+        Top = 280
         Width = 872
+        Anchors = [akTop, akLeft, akRight]
         Caption = 'Preferences texts'
+        ClientHeight = 124
+        ClientWidth = 868
         TabOrder = 1
+        object LabelPrefTitle: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 26
+          Caption = 'Title:'
+          ParentColor = False
+        end
+        object EditPrefTitle: TEdit
+          Left = 152
+          Height = 23
+          Top = 5
+          Width = 708
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 0
+          Text = 'Consent Preferences Center'
+        end
+        object LabelPrefAcceptAll: TLabel
+          Left = 8
+          Height = 15
+          Top = 36
+          Width = 55
+          Caption = 'Accept all:'
+          ParentColor = False
+        end
+        object EditPrefAcceptAll: TEdit
+          Left = 152
+          Height = 23
+          Top = 33
+          Width = 200
+          TabOrder = 1
+          Text = 'Accept all'
+        end
+        object LabelPrefRejectAll: TLabel
+          Left = 8
+          Height = 15
+          Top = 64
+          Width = 50
+          Caption = 'Reject all:'
+          ParentColor = False
+        end
+        object EditPrefRejectAll: TEdit
+          Left = 152
+          Height = 23
+          Top = 61
+          Width = 200
+          TabOrder = 2
+          Text = 'Reject all'
+        end
+        object LabelPrefSave: TLabel
+          Left = 408
+          Height = 15
+          Top = 36
+          Width = 91
+          Caption = 'Save preferences:'
+          ParentColor = False
+        end
+        object EditPrefSave: TEdit
+          Left = 536
+          Height = 23
+          Top = 33
+          Width = 200
+          TabOrder = 3
+          Text = 'Save preferences'
+        end
+        object LabelPrefClose: TLabel
+          Left = 408
+          Height = 15
+          Top = 64
+          Width = 86
+          Caption = 'Close icon label:'
+          ParentColor = False
+        end
+        object EditPrefClose: TEdit
+          Left = 536
+          Height = 23
+          Top = 61
+          Width = 200
+          TabOrder = 4
+          Text = 'Close modal'
+        end
+        object LabelPrefServiceCounter: TLabel
+          Left = 8
+          Height = 15
+          Top = 92
+          Width = 106
+          Caption = 'Service counter text:'
+          ParentColor = False
+        end
+        object EditPrefServiceCounter: TEdit
+          Left = 152
+          Height = 23
+          Top = 89
+          Width = 200
+          TabOrder = 5
+          Text = 'Service|Services'
+        end
       end
     end
     object TabSheetPreferences: TTabSheet
-      Caption = 'Blocks'
+      Caption = 'Sections'
       ClientHeight = 436
       ClientWidth = 896
       object ToolBarCat: TToolBar
@@ -88,6 +296,30 @@ object FormEditLangTexts: TFormEditLangTexts
           Top = 2
           ImageIndex = 9
         end
+      end
+      object ListViewBlocks: TListView
+        Left = 0
+        Height = 396
+        Top = 40
+        Width = 896
+        Align = alClient
+        Columns = <        
+          item
+            Caption = 'Title'
+            Width = 200
+          end        
+          item
+            Caption = 'Description'
+            Width = 350
+          end        
+          item
+            Caption = 'Linked category'
+            Width = 125
+          end>
+        GridLines = True
+        RowSelect = True
+        TabOrder = 1
+        ViewStyle = vsReport
       end
     end
   end

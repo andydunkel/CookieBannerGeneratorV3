@@ -1,0 +1,8 @@
+object FormEditSection: TFormEditSection
+  Left = 519
+  Height = 214
+  Top = 40
+  Width = 537
+  Caption = 'Edit section'
+  Position = poOwnerFormCenter
+end

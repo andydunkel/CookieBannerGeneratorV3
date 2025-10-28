@@ -173,19 +173,37 @@
         <Filename Value="formcategory.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormEditCategory"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
       <Unit>
         <Filename Value="formedittexts.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormEditLangTexts"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
       <Unit>
         <Filename Value="formeditlang.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormEditLanguage"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="formsection.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormEditSection"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\category.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\language.pas"/>
+        <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
   </ProjectOptions>

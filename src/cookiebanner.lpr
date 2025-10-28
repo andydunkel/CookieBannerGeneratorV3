@@ -11,8 +11,8 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, mainform, about, XMLHelper, globalfunctions, datamodel, projectlogic,
-  inputdialog, modelhelper,
-  appsettings, formcategory, formedittexts, formeditlang;
+  inputdialog, modelhelper, appsettings, formcategory, formedittexts,
+  formeditlang, formsection, category, language;
 
 {$R *.res}
 
@@ -23,8 +23,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TFormAbout, FormAbout);
-  Application.CreateForm(TFormEditLangTexts, FormEditLangTexts);
-  Application.CreateForm(TFormEditLanguage, FormEditLanguage);
   Application.Run;
 end.
 

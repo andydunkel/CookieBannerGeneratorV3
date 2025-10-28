@@ -18,6 +18,8 @@ type
     CheckBoxReadonly: TCheckBox;
     ComboBoxCatName: TComboBox;
     LabelCatName: TLabel;
+    procedure ButtonOKClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -30,6 +32,35 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TFormEditCategory }
+
+procedure TFormEditCategory.FormCreate(Sender: TObject);
+begin
+  // Set focus to ComboBox when form opens
+  ActiveControl := ComboBoxCatName;
+
+  // Make OK button the default button (Enter key triggers it)
+  ButtonOK.Default := True;
+
+  // Make Cancel button respond to Escape key
+  ButtonCancel.Cancel := True;
+end;
+
+procedure TFormEditCategory.ButtonOKClick(Sender: TObject);
+begin
+  // Validate that ComboBox is not empty
+  if Trim(ComboBoxCatName.Text) = '' then
+  begin
+    ShowMessage('Please enter a category name.');
+    ComboBoxCatName.SetFocus;
+    ModalResult := mrNone; // Prevent dialog from closing
+    Exit;
+  end;
+
+  // If validation passes, close dialog with OK result
+  ModalResult := mrOK;
+end;
 
 end.
 

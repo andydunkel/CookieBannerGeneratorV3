@@ -1,56 +1,86 @@
 unit datamodel;
-
 {$mode ObjFPC}{$H+}
 
 interface
 
 uses
-  Classes, SysUtils, laz2_DOM, laz2_XMLRead, laz2_XMLWrite, XMLHelper, fgl;
+  Classes, SysUtils, laz2_DOM, laz2_XMLRead, laz2_XMLWrite, XMLHelper, category, language;
 
 type
   { TProject }
+  TProject = class
+  private
+    FCategories: TCategoryList;
+    FLanguages: TLanguageList;
+    procedure ClearDocument;
+    procedure AddTextNode(ParentNode: TDOMNode; const NodeName, NodeValue: String);
+  public
+    ProjectName: UnicodeString;
+    Comment: UnicodeString;
+    SelectedLanguage: Integer;
 
- TProject = class
-    public
-      ProjectName: UnicodeString;
-      Comment: UnicodeString;
-      SelectedLanguage: Integer;
-      Doc: TXMLDocument;
-      constructor Create;
-      destructor Destroy; override;
-      procedure Save(FileName: String);
-      procedure Load(FileName: String);
-      procedure AddTextNode(ParentNode: TDOMNode; const NodeName, NodeValue: String);
-      function GetTextNodeContent(Node: TDOMNode): String;
+    constructor Create;
+    destructor Destroy; override;
+
+    procedure Save(const FileName: String);
+    procedure Load(const FileName: String);
+    procedure Clear;
+
+    property Categories: TCategoryList read FCategories;
+    property Languages: TLanguageList read FLanguages;
   end;
 
-
 implementation
-
 
 { TProject }
 
 constructor TProject.Create;
 begin
   inherited Create;
+  FCategories := TCategoryList.Create(True); // True = owns objects
+  FLanguages := TLanguageList.Create; // Already owns objects by default
+
+  ProjectName := '';
+  Comment := '';
+  SelectedLanguage := 0;
 end;
 
 destructor TProject.Destroy;
 begin
+  FreeAndNil(FCategories);
+  FreeAndNil(FLanguages);
   inherited Destroy;
 end;
 
-procedure TProject.AddTextNode(ParentNode: TDOMNode; const NodeName, NodeValue: String);
+procedure TProject.ClearDocument;
 begin
-  ParentNode.AppendChild(Doc.CreateElement(NodeName)).TextContent := NodeValue;
+  ProjectName := '';
+  Comment := '';
+  SelectedLanguage := 0;
+  FCategories.Clear;
+  FLanguages.Clear;
+  // Reset default language
+  FLanguages.DefaultLanguage := 'en';
 end;
 
+procedure TProject.Clear;
+begin
+  ClearDocument;
+end;
 
-
-procedure TProject.Save(FileName: String);
+procedure TProject.AddTextNode(ParentNode: TDOMNode; const NodeName, NodeValue: String);
 var
+  NewNode: TDOMNode;
+begin
+  NewNode := ParentNode.OwnerDocument.CreateElement(NodeName);
+  NewNode.TextContent := NodeValue;
+  ParentNode.AppendChild(NewNode);
+end;
+
+procedure TProject.Save(const FileName: String);
+var
+  Doc: TXMLDocument;
   RootNode: TDOMNode;
-  i, j: Integer;
 begin
   Doc := TXMLDocument.Create;
   try
@@ -62,37 +92,47 @@ begin
     AddTextNode(RootNode, 'Comment', Comment);
     AddTextNode(RootNode, 'SelectedLanguage', IntToStr(SelectedLanguage));
 
+    // Save categories and languages
+    FCategories.SaveToXML(RootNode);
+    FLanguages.SaveToXML(RootNode);
+
     WriteXMLFile(Doc, FileName);
   finally
     Doc.Free;
   end;
 end;
 
-procedure TProject.Load(FileName: String);
+procedure TProject.Load(const FileName: String);
 var
-  RootNode:  TDOMNode;
+  Doc: TXMLDocument;
+  RootNode: TDOMNode;
 begin
+  if not FileExists(FileName) then
+    raise Exception.CreateFmt('File not found: %s', [FileName]);
+
   ReadXMLFile(Doc, FileName);
   try
     RootNode := Doc.DocumentElement;
 
-    ProjectName := TXMLHelper.GetXML('ProjectName', RootNode);
-    Comment:= TXMLHelper.GetXml('Comment', RootNode);
+    if RootNode.NodeName <> 'Project' then
+      raise Exception.Create('Invalid project file format');
 
+    // Load all fields
+    ProjectName := TXMLHelper.GetXML('ProjectName', RootNode);
+    Comment := TXMLHelper.GetXML('Comment', RootNode);
+
+    try
+      SelectedLanguage := StrToInt(TXMLHelper.GetXML('SelectedLanguage', RootNode));
+    except
+      SelectedLanguage := 0;
+    end;
+
+    // Load categories and languages
+    FCategories.LoadFromXML(RootNode);
+    FLanguages.LoadFromXML(RootNode);
   finally
     Doc.Free;
   end;
 end;
 
-
-function TProject.GetTextNodeContent(Node: TDOMNode): String;
-  begin
-    if Assigned(Node) and Assigned(Node.FirstChild) then
-      Result := Node.FirstChild.NodeValue
-    else
-      Result := '';
-  end;
-
-
 end.
-

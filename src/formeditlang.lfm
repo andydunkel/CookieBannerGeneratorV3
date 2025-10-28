@@ -8,23 +8,26 @@ object FormEditLanguage: TFormEditLanguage
   ClientHeight = 146
   ClientWidth = 243
   Position = poOwnerFormCenter
+  OnShow = FormShow
   object ButtonCancel: TButton
-    Left = 64
+    Left = 128
     Height = 25
     Top = 96
-    Width = 75
+    Width = 91
     Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 0
   end
   object ButtonOK: TButton
-    Left = 144
+    Left = 48
     Height = 25
     Top = 96
     Width = 75
     Caption = 'OK'
+    Default = True
     ModalResult = 1
     TabOrder = 1
+    OnClick = ButtonOKClick
   end
   object LabelLang: TLabel
     Left = 24

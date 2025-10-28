@@ -5648,9 +5648,9 @@ object FormMain: TFormMain
     Height = 492
     Top = 48
     Width = 788
-    ActivePage = TabSheetCategories
+    ActivePage = TabSheetTexts
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 2
     object TabSheetCategories: TTabSheet
       Caption = 'Categories'
@@ -5679,32 +5679,17 @@ object FormMain: TFormMain
           Top = 2
           Caption = 'Edit'
           ImageIndex = 7
+          OnClick = ButtonCatEditClick
         end
         object ButtonCatDelete: TToolButton
           Left = 61
           Top = 2
           Caption = 'Delete'
           ImageIndex = 8
-        end
-        object ToolButton6: TToolButton
-          Left = 102
-          Height = 32
-          Top = 2
-          Caption = 'ToolButton6'
-          Style = tbsSeparator
-        end
-        object ButtonCatUp: TToolButton
-          Left = 110
-          Top = 2
-          ImageIndex = 10
-        end
-        object ButtonCatDown: TToolButton
-          Left = 133
-          Top = 2
-          ImageIndex = 9
+          OnClick = ButtonCatDeleteClick
         end
       end
-      object ListView1: TListView
+      object ListViewCategories: TListView
         Left = 8
         Height = 416
         Top = 48
@@ -5716,18 +5701,19 @@ object FormMain: TFormMain
             Width = 150
           end        
           item
-            Caption = 'Enabled'
+            Caption = 'Readonly'
             Width = 75
           end        
           item
-            Caption = 'Readonly'
-            Width = 75
+            Caption = 'Preselected'
+            Width = 125
           end>
         GridLines = True
         ReadOnly = True
         RowSelect = True
         TabOrder = 1
         ViewStyle = vsReport
+        OnDblClick = ButtonCatEditClick
       end
     end
     object TabSheetTexts: TTabSheet
@@ -5750,13 +5736,14 @@ object FormMain: TFormMain
           Top = 2
           Caption = 'New'
           ImageIndex = 0
-          OnClick = ButtonCatNewClick
+          OnClick = ButtonLangNewClick
         end
         object ButtonLangEdit: TToolButton
           Left = 33
           Top = 2
           Caption = 'Edit'
           ImageIndex = 7
+          OnClick = ButtonLangEditClick
         end
         object ButtonLangDelete: TToolButton
           Left = 61
@@ -5775,11 +5762,13 @@ object FormMain: TFormMain
           Left = 110
           Top = 2
           ImageIndex = 10
+          OnClick = ButtonLangUpClick
         end
         object ButtonLangDown: TToolButton
           Left = 133
           Top = 2
           ImageIndex = 9
+          OnClick = ButtonLangDownClick
         end
         object ButtonEditTexts: TToolButton
           Left = 164
@@ -5795,7 +5784,7 @@ object FormMain: TFormMain
           Style = tbsSeparator
         end
       end
-      object ListView2: TListView
+      object ListViewLang: TListView
         Left = 8
         Height = 416
         Top = 48
@@ -5804,11 +5793,13 @@ object FormMain: TFormMain
         Columns = <        
           item
             Caption = 'Language'
-            Width = 150
+            Width = 300
           end>
         GridLines = True
+        RowSelect = True
         TabOrder = 1
         ViewStyle = vsReport
+        OnDblClick = ButtonLangEditClick
       end
     end
     object TabSheetDesign: TTabSheet
@@ -6520,9 +6511,6 @@ object FormMain: TFormMain
     end
     object MenuItemTools: TMenuItem
       Caption = '&Tools'
-      object MenuItemServiceTypes: TMenuItem
-        Action = ActionServiceTypes
-      end
     end
     object MenuItemExport: TMenuItem
       Caption = '&Export'

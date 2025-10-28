@@ -12,15 +12,34 @@ object FormEditLangTexts: TFormEditLangTexts
     Height = 464
     Top = 8
     Width = 904
-    ActivePage = TabSheetPreferences
+    ActivePage = TabSheetConsent
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     object TabSheetConsent: TTabSheet
-      Caption = 'Consent texts'
+      Caption = 'Texts'
+      ClientHeight = 436
+      ClientWidth = 896
+      object GroupBoxConsentTexts: TGroupBox
+        Left = 8
+        Height = 208
+        Top = 8
+        Width = 872
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Consent texts'
+        TabOrder = 0
+      end
+      object GroupBoxPrefModal: TGroupBox
+        Left = 8
+        Height = 200
+        Top = 224
+        Width = 872
+        Caption = 'Preferences texts'
+        TabOrder = 1
+      end
     end
     object TabSheetPreferences: TTabSheet
-      Caption = 'Block texts'
+      Caption = 'Blocks'
       ClientHeight = 436
       ClientWidth = 896
       object ToolBarCat: TToolBar

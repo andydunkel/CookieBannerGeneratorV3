@@ -17,6 +17,8 @@ type
     ButtonCatEdit: TToolButton;
     ButtonCatNew: TToolButton;
     ButtonCatUp: TToolButton;
+    GroupBoxConsentTexts: TGroupBox;
+    GroupBoxPrefModal: TGroupBox;
     PageControl1: TPageControl;
     TabSheetConsent: TTabSheet;
     TabSheetPreferences: TTabSheet;

@@ -1,24 +1,55 @@
 object FormEditLangTexts: TFormEditLangTexts
   Left = 519
-  Height = 524
+  Height = 573
   Top = 40
   Width = 919
   Caption = 'Edit language texts'
-  ClientHeight = 524
+  ClientHeight = 573
   ClientWidth = 919
   Position = poOwnerFormCenter
+  OnShow = FormShow
   object PageControl1: TPageControl
     Left = 8
-    Height = 505
-    Top = 8
+    Height = 498
+    Top = 48
     Width = 904
-    ActivePage = TabSheetConsent
+    ActivePage = TabSheetPreferences
     Anchors = [akTop, akLeft, akRight, akBottom]
     TabIndex = 0
     TabOrder = 0
+    OnChange = PageControl1Change
+    object TabSheetPreferences: TTabSheet
+      Caption = 'Sections'
+      ClientHeight = 470
+      ClientWidth = 896
+      object ListViewBlocks: TListView
+        Left = 0
+        Height = 470
+        Top = 0
+        Width = 896
+        Align = alClient
+        Columns = <        
+          item
+            Caption = 'Title'
+            Width = 200
+          end        
+          item
+            Caption = 'Description'
+            Width = 350
+          end        
+          item
+            Caption = 'Linked category'
+            Width = 125
+          end>
+        GridLines = True
+        RowSelect = True
+        TabOrder = 0
+        ViewStyle = vsReport
+      end
+    end
     object TabSheetConsent: TTabSheet
       Caption = 'Texts'
-      ClientHeight = 477
+      ClientHeight = 470
       ClientWidth = 896
       object GroupBoxConsentTexts: TGroupBox
         Left = 8
@@ -246,81 +277,74 @@ object FormEditLangTexts: TFormEditLangTexts
         end
       end
     end
-    object TabSheetPreferences: TTabSheet
-      Caption = 'Sections'
-      ClientHeight = 477
-      ClientWidth = 896
-      object ToolBarCat: TToolBar
-        Left = 0
-        Height = 40
-        Top = 0
-        Width = 896
-        ButtonHeight = 32
-        ButtonWidth = 23
-        Caption = 'ToolBarCat'
-        Images = FormMain.ImageList
-        ShowCaptions = True
-        TabOrder = 0
-        object ButtonCatNew: TToolButton
-          Left = 1
-          Top = 2
-          Caption = 'New'
-          ImageIndex = 0
-        end
-        object ButtonCatEdit: TToolButton
-          Left = 33
-          Top = 2
-          Caption = 'Edit'
-          ImageIndex = 7
-        end
-        object ButtonCatDelete: TToolButton
-          Left = 61
-          Top = 2
-          Caption = 'Delete'
-          ImageIndex = 8
-        end
-        object ToolButton6: TToolButton
-          Left = 102
-          Height = 32
-          Top = 2
-          Caption = 'ToolButton6'
-          Style = tbsSeparator
-        end
-        object ButtonCatUp: TToolButton
-          Left = 110
-          Top = 2
-          ImageIndex = 10
-        end
-        object ButtonCatDown: TToolButton
-          Left = 133
-          Top = 2
-          ImageIndex = 9
-        end
-      end
-      object ListViewBlocks: TListView
-        Left = 0
-        Height = 437
-        Top = 40
-        Width = 896
-        Align = alClient
-        Columns = <        
-          item
-            Caption = 'Title'
-            Width = 200
-          end        
-          item
-            Caption = 'Description'
-            Width = 350
-          end        
-          item
-            Caption = 'Linked category'
-            Width = 125
-          end>
-        GridLines = True
-        RowSelect = True
-        TabOrder = 1
-        ViewStyle = vsReport
-      end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 550
+    Width = 919
+    Panels = <>
+  end
+  object ToolBarMain: TToolBar
+    Left = 0
+    Height = 40
+    Top = 0
+    Width = 919
+    ButtonHeight = 32
+    ButtonWidth = 32
+    Images = FormMain.ImageList
+    ShowCaptions = True
+    TabOrder = 2
+    object ToolButtonClose: TToolButton
+      Left = 186
+      Top = 2
+      AutoSize = True
+      Caption = 'Close '
+      ImageIndex = 2
+      OnClick = ToolButtonCloseClick
+    end
+    object ButtonNew: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'New'
+      ImageIndex = 0
+      OnClick = ButtonNewClick
+    end
+    object ButtonEdit: TToolButton
+      Left = 33
+      Top = 2
+      Caption = 'Edit'
+      ImageIndex = 7
+    end
+    object ButtonDelete: TToolButton
+      Left = 65
+      Top = 2
+      Caption = 'Delete'
+      ImageIndex = 8
+    end
+    object ToolButton6: TToolButton
+      Left = 106
+      Height = 32
+      Top = 2
+      Caption = 'ToolButton6'
+      Style = tbsSeparator
+    end
+    object ButtonUp: TToolButton
+      Left = 114
+      Top = 2
+      ImageIndex = 10
+    end
+    object ButtonDown: TToolButton
+      Left = 146
+      Top = 2
+      ImageIndex = 9
+    end
+    object ToolButton1: TToolButton
+      Left = 178
+      Height = 32
+      Top = 2
+      Caption = 'ToolButton1'
+      Style = tbsSeparator
     end
   end
 end

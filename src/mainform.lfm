@@ -5648,9 +5648,9 @@ object FormMain: TFormMain
     Height = 492
     Top = 48
     Width = 788
-    ActivePage = TabSheetDesign
+    ActivePage = TabSheetTexts
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 2
+    TabIndex = 1
     TabOrder = 2
     object TabSheetCategories: TTabSheet
       Caption = 'Categories'

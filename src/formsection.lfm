@@ -28,7 +28,7 @@ object FormEditSection: TFormEditSection
     Left = 16
     Height = 15
     Top = 48
-    Width = 67
+    Width = 63
     Caption = 'Description:'
     ParentColor = False
   end
@@ -37,7 +37,7 @@ object FormEditSection: TFormEditSection
     Height = 120
     Top = 45
     Width = 464
-    Anchors = [akTop, akLeft, akRight]
+    Anchors = [akTop, akLeft, akRight, akBottom]
     Lines.Strings = (
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     )
@@ -48,7 +48,7 @@ object FormEditSection: TFormEditSection
     Left = 16
     Height = 15
     Top = 180
-    Width = 93
+    Width = 89
     Caption = 'Linked Category:'
     ParentColor = False
   end
@@ -57,25 +57,25 @@ object FormEditSection: TFormEditSection
     Height = 23
     Top = 177
     Width = 200
+    Anchors = [akLeft, akBottom]
     ItemHeight = 15
     TabOrder = 2
     Text = 'necessary'
   end
   object ButtonOK: TButton
-    Left = 420
+    Left = 424
     Height = 25
-    Top = 248
+    Top = 240
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'OK'
-    Default = True
     ModalResult = 1
     TabOrder = 3
   end
   object ButtonCancel: TButton
-    Left = 509
+    Left = 504
     Height = 25
-    Top = 248
+    Top = 240
     Width = 75
     Anchors = [akRight, akBottom]
     Cancel = True

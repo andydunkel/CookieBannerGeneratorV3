@@ -335,9 +335,14 @@ var
    FormEditTexts : TFormEditLangTexts;
 begin
   if ListViewLang.ItemIndex = -1 then exit;
-  FormEditTexts:= TFormEditLangTexts.Create(Self);
-  FormEditTexts.ShowModal;
-  FreeAndNil(FormEditTexts);
+  FormEditTexts := TFormEditLangTexts.Create(Self);
+  try
+    // Pass the selected language index or data
+    FormEditTexts.LanguageIndex := ListViewLang.ItemIndex;
+    FormEditTexts.ShowModal;
+  finally
+    FreeAndNil(FormEditTexts);
+  end;
 end;
 
 procedure TFormMain.ButtonLangDeleteClick(Sender: TObject);

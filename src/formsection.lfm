@@ -7,6 +7,8 @@ object FormEditSection: TFormEditSection
   ClientHeight = 290
   ClientWidth = 600
   Position = poOwnerFormCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
   object LabelTitle: TLabel
     Left = 16
     Height = 15
@@ -22,7 +24,6 @@ object FormEditSection: TFormEditSection
     Width = 464
     Anchors = [akTop, akLeft, akRight]
     TabOrder = 0
-    Text = 'Strictly Necessary Cookies <span class="pm__badge">Always Enabled</span>'
   end
   object LabelDescription: TLabel
     Left = 16
@@ -38,10 +39,7 @@ object FormEditSection: TFormEditSection
     Top = 45
     Width = 464
     Anchors = [akTop, akLeft, akRight, akBottom]
-    Lines.Strings = (
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    )
-    ScrollBars = ssAutoVertical
+    ScrollBars = ssAutoBoth
     TabOrder = 1
   end
   object LabelLinkedCategory: TLabel
@@ -60,7 +58,6 @@ object FormEditSection: TFormEditSection
     Anchors = [akLeft, akBottom]
     ItemHeight = 15
     TabOrder = 2
-    Text = 'necessary'
   end
   object ButtonOK: TButton
     Left = 424
@@ -69,8 +66,8 @@ object FormEditSection: TFormEditSection
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'OK'
-    ModalResult = 1
     TabOrder = 3
+    OnClick = ButtonOKClick
   end
   object ButtonCancel: TButton
     Left = 504
@@ -82,5 +79,12 @@ object FormEditSection: TFormEditSection
     Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 328
+    Height = 15
+    Top = 184
+    Width = 176
+    Caption = 'Leave empty for fixed text section'
   end
 end

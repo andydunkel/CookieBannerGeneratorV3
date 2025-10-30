@@ -42,9 +42,11 @@ object FormEditLangTexts: TFormEditLangTexts
             Width = 125
           end>
         GridLines = True
+        ReadOnly = True
         RowSelect = True
         TabOrder = 0
         ViewStyle = vsReport
+        OnDblClick = ButtonEditClick
       end
     end
     object TabSheetConsent: TTabSheet
@@ -315,12 +317,14 @@ object FormEditLangTexts: TFormEditLangTexts
       Top = 2
       Caption = 'Edit'
       ImageIndex = 7
+      OnClick = ButtonEditClick
     end
     object ButtonDelete: TToolButton
       Left = 65
       Top = 2
       Caption = 'Delete'
       ImageIndex = 8
+      OnClick = ButtonDeleteClick
     end
     object ToolButton6: TToolButton
       Left = 106
@@ -333,11 +337,13 @@ object FormEditLangTexts: TFormEditLangTexts
       Left = 114
       Top = 2
       ImageIndex = 10
+      OnClick = ButtonUpClick
     end
     object ButtonDown: TToolButton
       Left = 146
       Top = 2
       ImageIndex = 9
+      OnClick = ButtonDownClick
     end
     object ToolButton1: TToolButton
       Left = 178

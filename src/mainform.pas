@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ComCtrls, formcategory,
   ActnList, StdCtrls, Buttons, ExtCtrls, SynEdit, SynHighlighterJScript, category,
-  formeditlang, language, formedittexts;
+  formeditlang, language, formedittexts, codegenerator;
 
 type
 
@@ -60,7 +60,7 @@ type
     MenuItemAbout: TMenuItem;
     MenuItemInfo: TMenuItem;
     OpenDialog: TOpenDialog;
-    PageControl1: TPageControl;
+    PageControlMain: TPageControl;
     SaveDialog: TSaveDialog;
     Separator2: TMenuItem;
     MenuItemExit: TMenuItem;
@@ -112,8 +112,10 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure ListViewLangSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
+    procedure PageControlMainChange(Sender: TObject);
     function SaveCheck(): boolean;
     procedure FormShow(Sender: TObject);
+    procedure TabSheetCodeEnter(Sender: TObject);
     procedure UpdateTitleBar();
     procedure ShowErrorMessage(msg: String);
     procedure ShowWarningMessage(msg: String);
@@ -616,6 +618,11 @@ begin
   ButtonEditTexts.Enabled := ListViewLang.Selected <> nil;
 end;
 
+procedure TFormMain.PageControlMainChange(Sender: TObject);
+begin
+
+end;
+
 //check if the file should be saved
 function TFormMain.SaveCheck: boolean;
 var
@@ -656,6 +663,20 @@ begin
   ModelToForm();
   UpdateAll();
   ButtonEditTexts.Enabled := False; // Initially disabled
+end;
+
+procedure TFormMain.TabSheetCodeEnter(Sender: TObject);
+var
+  Generator: TCodeGenerator;
+  Code: String;
+begin
+  Generator := TCodeGenerator.Create(TProjectLogic.GetInstance.Model);
+  try
+    Code := Generator.GenerateWithCDN; // or just Generate
+    EditCode.Text := Code;
+  finally
+    Generator.Free;
+  end;
 end;
 
 //Update title bar

@@ -61,6 +61,7 @@ type
     procedure ButtonEditClick(Sender: TObject);
     procedure ButtonNewClick(Sender: TObject);
     procedure ButtonUpClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure PageControl1Change(Sender: TObject);
     procedure ToolButtonCloseClick(Sender: TObject);
@@ -150,6 +151,12 @@ begin
       ListViewBlocks.Items[SectionIndex - 1].MakeVisible(False);
     end;
   end;
+end;
+
+procedure TFormEditLangTexts.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+  FormToModel;
 end;
 
 procedure TFormEditLangTexts.ButtonDownClick(Sender: TObject);
@@ -280,7 +287,6 @@ end;
 
 procedure TFormEditLangTexts.ToolButtonCloseClick(Sender: TObject);
 begin
-  FormToModel;
   Close;
 end;
 

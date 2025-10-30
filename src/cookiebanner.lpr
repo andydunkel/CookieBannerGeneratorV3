@@ -12,7 +12,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, mainform, about, XMLHelper, globalfunctions, datamodel, projectlogic,
   inputdialog, modelhelper, appsettings, formcategory, formedittexts,
-  formeditlang, formsection, category, language;
+  formeditlang, formsection, category, language, codegenerator;
 
 {$R *.res}
 

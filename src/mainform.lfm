@@ -5643,15 +5643,16 @@ object FormMain: TFormMain
     Width = 802
     Panels = <>
   end
-  object PageControl1: TPageControl
+  object PageControlMain: TPageControl
     Left = 8
     Height = 492
     Top = 48
     Width = 788
-    ActivePage = TabSheetCategories
+    ActivePage = TabSheetCode
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 0
+    TabIndex = 3
     TabOrder = 2
+    OnChange = PageControlMainChange
     object TabSheetCategories: TTabSheet
       Caption = 'Categories'
       ClientHeight = 464
@@ -5984,6 +5985,7 @@ object FormMain: TFormMain
       Caption = 'Code'
       ClientHeight = 464
       ClientWidth = 780
+      OnEnter = TabSheetCodeEnter
       inline EditCode: TSynEdit
         Left = 8
         Height = 456
